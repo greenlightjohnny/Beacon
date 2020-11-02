@@ -1,13 +1,14 @@
-import Koa from "koa"
+import Koa, { Context } from "koa"
 import bodyParser from "koa-bodyparser"
 import cors from "koa2-cors"
 import logger from "koa-logger"
 import healthcheckRoutes from "./routes/healtcheck"
 //const healthcheckRoutes = require("./routes/healtcheck")
+import { config } from "./config"
 
 const app = new Koa()
 
-const PORT = process.env.PORT || 7654
+const PORT = config.port
 app.use(bodyParser())
 app.use(
   cors({

@@ -1,7 +1,8 @@
-const Router = require("@koa/router")
+const Router = require("koa-router")
+import { Context } from "koa"
 const router = new Router()
 
-router.get("/ping", async (ctx) => {
+router.get("/ping", async (ctx: Context) => {
   try {
     ctx.body = {
       status: "success",
