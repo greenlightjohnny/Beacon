@@ -12,7 +12,7 @@ export const redisStorage: Interfaces.IStorage = {
   get: (list: string) => {
     return lrange(list, 0, -1)
       .then((val: string) => val)
-      .catch((e: Error) => [""])
+      .catch((e: Error) => [])
   },
   add: (list: string, name: string) => {
     return rpush(list, name)

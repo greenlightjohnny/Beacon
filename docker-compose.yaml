@@ -4,4 +4,4 @@ services:
   redis:
     image: redis:3.0.2
     ports:
-      - "6401:6379"
+      - "6379:6379"
