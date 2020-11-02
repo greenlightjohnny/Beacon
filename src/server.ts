@@ -3,6 +3,7 @@ import bodyParser from "koa-bodyparser"
 import cors from "koa2-cors"
 import logger from "koa-logger"
 import healthcheckRoutes from "./routes/healtcheck"
+import coderRoutes from "./routes/coder"
 //const healthcheckRoutes = require("./routes/healtcheck")
 import { config } from "./config"
 
@@ -30,6 +31,7 @@ app.use(logger())
 // })
 
 app.use(healthcheckRoutes.routes())
+app.use(coderRoutes.routes())
 
 const server = app
   .listen(PORT, async () => {
